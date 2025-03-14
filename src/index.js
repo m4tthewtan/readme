@@ -1,8 +1,6 @@
-document.querySelectorAll("a").forEach((anchor) => {
-  if (anchor.href.includes("https")) {
-    anchor.target = "_blank";
-    anchor.rel = "noopener noreferrer";
-  }
+document.querySelectorAll("a.external").forEach((anchor) => {
+  anchor.setAttribute("target", "_blank");
+  anchor.setAttribute("rel", "noopener noreferrer");
 });
 
 window.addEventListener("load", () => {
