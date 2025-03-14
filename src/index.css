@@ -1,0 +1,188 @@
+@import url("https://fonts.cdnfonts.com/css/jetbrains-mono");
+
+:root {
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
+
+  --font-size: 16px;
+  --line-height: 1.4rem;
+
+  --font-family: "JetBrains Mono", monospace;
+
+  --border-thickness: 2px;
+  --text-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: var(--line-height) 2ch;
+  max-width: calc(min(80ch, round(down, 100%, 1ch)));
+  color: var(--text-color);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  margin-bottom: calc(var(--line-height) * 2);
+  font-size: 2rem;
+  line-height: calc(2 * var(--line-height));
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+hr {
+  display: block;
+  position: relative;
+  margin: calc(var(--line-height) * 1.5) 0;
+  border: none;
+  height: var(--line-height);
+  color: var(--text-color);
+}
+
+hr:after {
+  display: block;
+  position: absolute;
+  top: calc(var(--line-height) / 2 - var(--border-thickness));
+  left: 0;
+  border-top: calc(var(--border-thickness) * 3) double var(--text-color);
+  width: 100%;
+  height: 0;
+  content: "";
+}
+
+a {
+  text-decoration-thickness: var(--border-thickness);
+}
+
+a:link,
+a:visited {
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: var(--line-height);
+  word-break: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+table {
+  position: relative;
+  top: calc(var(--line-height) / 2);
+  border-collapse: collapse;
+  width: calc(round(down, 100%, 1ch));
+}
+
+th,
+td {
+  vertical-align: top;
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc((var(--line-height) / 2))
+    calc(1ch - var(--border-thickness) / 2)
+    calc((var(--line-height) / 2) - (var(--border-thickness)));
+  text-align: left;
+}
+
+th {
+  font-weight: 700;
+}
+
+.header {
+  margin-bottom: calc(var(--line-height) * 2);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header tr td:last-child {
+  text-align: right;
+}
+
+details {
+  margin-bottom: var(--line-height);
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) - var(--border-thickness)) 1ch;
+}
+
+details > *:not(summary) {
+  margin-bottom: 0;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+}
+
+summary::after {
+  margin-right: 8px;
+  content: "\23F5"; /*closed icon */
+}
+
+details[open] summary::after {
+  content: "\23F7"; /* opened icon */
+}
+
+ul,
+ol {
+  margin: 0 0 var(--line-height);
+  padding: 0;
+}
+
+ul {
+  padding: 0 0 0 2ch;
+  list-style-type: square;
+}
+
+ol {
+  counter-reset: item;
+  padding: 0;
+  list-style-type: none;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+  padding: 0 0 0 3ch;
+}
+
+ol li:before {
+  counter-increment: item;
+  content: counters(item, ".") ". ";
+  font-weight: var(--font-weight-medium);
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
