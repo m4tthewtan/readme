@@ -1,3 +1,7 @@
+document.querySelectorAll("details").forEach((detail) => {
+  detail.open = true;
+});
+
 document.querySelectorAll("a.external").forEach((anchor) => {
   anchor.setAttribute("target", "_blank");
   anchor.setAttribute("rel", "noopener noreferrer");
